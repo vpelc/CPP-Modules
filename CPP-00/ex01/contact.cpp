@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:11:32 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/06 15:00:38 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/06 16:49:48 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,21 @@ char *Contact::check_size(char *str)
 		str[10] = '\0';
 	}
 	return str;
+}
+
+void	Contact::add_contact(void)
+{
+	Contact	new_contact;
+	
+	std::cout << "You chose to add a contact. Please fill out the informations" << std::endl;
+	std::cout << "First name :";
+	std::cin >> new_contact.first_name;
+	std::cout << "Last name :";
+	std::cin >> new_contact.last_name;
+	std::cout << "Nickname :";
+	std::cin >> new_contact.nickname;
+	std::cout << "Phone number :"; 
+	std::cin >> new_contact.phone_number;
+	std::cout << "Darkest secret :";
+	std::cin >> new_contact.darkest_secret;
 }
