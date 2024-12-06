@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:28:54 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/06 15:10:50 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/06 16:23:39 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	Phonebook::add_contact(void)
 	
 	std::cout << "You chose to add a contact. Please fill out the informations" << std::endl;
 	std::cout << "First name :";
-	std::cin >> new_contact.fist_name;
+	std::cin >> new_contact.first_name;
 	std::cout << "Last name :";
 	std::cin >> new_contact.last_name;
 	std::cout << "Nickname :";
