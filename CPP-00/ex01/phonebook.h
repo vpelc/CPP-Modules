@@ -6,14 +6,14 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:28:43 by vpelc             #+#    #+#             */
-/*   Updated: 2024/11/29 18:31:28 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/06 15:10:13 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 class Phonebook{
 
 	public :
-			Phonebook(void);
-			~Phonebook(void);
-
+		Phonebook(void);
+		~Phonebook(void);
+		void add_contact(void);
 };

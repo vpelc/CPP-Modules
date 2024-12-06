@@ -6,7 +6,7 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/10 17:59:30 by vpelc             #+#    #+#              #
-#    Updated: 2024/11/29 13:59:26 by vpelc            ###   ########.fr        #
+#    Updated: 2024/12/06 13:55:29 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS              = -Wall -Werror -Wextra #-std=c++98
 RM                  = rm -rf
 
 # Source files
-SRCS				= 
+SRCS				= contact.cpp phonebook.cpp main.cpp
 
 # File paths
 OBJ					=  $(SRCS:.cpp=.o)

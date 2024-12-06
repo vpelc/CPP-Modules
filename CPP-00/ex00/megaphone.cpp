@@ -6,12 +6,12 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:57:25 by vpelc             #+#    #+#             */
-/*   Updated: 2024/11/29 17:36:38 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/11/30 13:39:38 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
+#include <string.h>
 
 char	*to_upper(char *str);
 
