@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:11:23 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/09 15:08:19 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/09 18:25:39 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ class Contact
 		~Contact(void);
 		Contact	new_contact(void);
 		char *check_size(char *str);
+		char *Contact::get_firstname() const;
+		char *Contact::get_lastname() const;
+		char *Contact::get_nickname() const;
+		char *Contact::get_phonenbr() const;
+		char *Contact::get_drksecret() const;
 		
 };
 

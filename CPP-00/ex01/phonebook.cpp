@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:28:54 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/09 16:43:02 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/09 18:37:25 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,11 @@ void	Phonebook::search_contact(Phonebook phonebook)
 {
 	for(int i = 0; i < phonebook.nbr_contact; i++)
 	{
-		for()
+		phonebook.print_search(phonebook.contact_list[i].get_firstname());
+		phonebook.print_search(phonebook.contact_list[i].get_lastname());
+		phonebook.print_search(phonebook.contact_list[i].get_nickname());
+		phonebook.print_search(phonebook.contact_list[i].get_phonenbr());
+		phonebook.print_search(phonebook.contact_list[i].get_drksecret());
 		
 	}
 
