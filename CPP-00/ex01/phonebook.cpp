@@ -6,46 +6,70 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:28:54 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/09 18:37:25 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/10 17:59:03 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <iomanip>
+#include <string>
 #include "phonebook.h"
 #include "contact.h"
 
-Phonebook::Phonebook(void){}
+// Phonebook::Phonebook(void){}
 
 Phonebook::~Phonebook(void){}
 
-void	Phonebook::add_contact(Phonebook phonebook)
+int	Phonebook::get_nbrContact(void)
 {
-	Contact contact;
+	return this->nbr_contact;
+}
 
-	if (phonebook.nbr_contact > 7)
+void	Phonebook::add_contact(void)
+{
+	Contact new_contact;
+
+	if (nbr_contact > 7)
 		return ;
-	phonebook.contact_list[phonebook.nbr_contact] = contact.new_contact();
+	new_contact = Contact::new_contact();
+	contact_list[nbr_contact] = new_contact;
+	nbr_contact++;
 }
 
-void	Phonebook::search_contact(Phonebook phonebook)
+void	Phonebook::search_contact(void)
 {
-	for(int i = 0; i < phonebook.nbr_contact; i++)
+	int index;
+
+	std::cout << std::left << "|Index     |First name|Last Name |Nickname  |" << std::endl;
+	for(int i = 0; i < nbr_contact; i++)
 	{
-		phonebook.print_search(phonebook.contact_list[i].get_firstname());
-		phonebook.print_search(phonebook.contact_list[i].get_lastname());
-		phonebook.print_search(phonebook.contact_list[i].get_nickname());
-		phonebook.print_search(phonebook.contact_list[i].get_phonenbr());
-		phonebook.print_search(phonebook.contact_list[i].get_drksecret());
-		
+		std::cout << "|";
+		std::cout << std::right << std::setw(10) << i + 1;
+		std::cout << "|";		
+		print_search(contact_list[i].get_firstname());
+		print_search(contact_list[i].get_lastname());
+		print_search(contact_list[i].get_nickname());
+		std::cout << std::endl;
 	}
-
-
+	std::cin >> index;
+	if (index < 0 || index > nbr_contact)
+		return ;
+	else
+	{
+		std::cout << "First name : " << contact_list[index - 1].get_firstname() << std::endl;
+		std::cout << "Last name : " << contact_list[index - 1].get_lastname() << std::endl;
+		std::cout << "Nickname : " << contact_list[index - 1].get_nickname() << std::endl;
+		std::cout << "Phone number : " << contact_list[index - 1].get_phonenbr() << std::endl; 
+		std::cout << "Darkest secret : " << contact_list[index - 1].get_drksecret() << std::endl;
+	}
 }
 
-void	Phonebook::print_search(char *str)
+void	Phonebook::print_search(std::string str)
 {
-	for(int j = 0; j < 10; j++)
-	{
-
-	}
+	std::string cutstr;
+	
+	cutstr = str.substr(0, 10);
+	cutstr[9] = '.';
+	std::cout << std::right << std::setw(10) << cutstr;
+	std::cout << "|";
 }

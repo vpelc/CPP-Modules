@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:28:43 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/09 16:42:45 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/10 16:53:42 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ class Phonebook{
 		int		nbr_contact;
 
 	public :
-		Phonebook(void);
+		Phonebook(void) : nbr_contact(0){}
 		~Phonebook(void);
-		void add_contact(Phonebook phonebook);
-		void search_contact(Phonebook phonebook);
-		void print_search(char *str);
+		int	get_nbrContact(void);
+		void add_contact(void);
+		void search_contact(void);
+		void print_search(std::string str);
 };
 
 

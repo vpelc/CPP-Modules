@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:11:23 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/09 18:25:39 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/10 15:06:08 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,22 @@
 class Contact
 {
 	private :
-		char *first_name;
-		char *last_name;
-		char *nickname;
-		char *phone_number;
-		char *darkest_secret;
+		std::string first_name;
+		std::string last_name;
+		std::string nickname;
+		std::string phone_number;
+		std::string darkest_secret;
 		
 	public :
 		Contact(void);
 		~Contact(void);
-		Contact	new_contact(void);
-		char *check_size(char *str);
-		char *Contact::get_firstname() const;
-		char *Contact::get_lastname() const;
-		char *Contact::get_nickname() const;
-		char *Contact::get_phonenbr() const;
-		char *Contact::get_drksecret() const;
+		static Contact	new_contact(void);
+		std::string check_size(std::string str);
+		std::string get_firstname() const;
+		std::string get_lastname() const;
+		std::string get_nickname() const;
+		std::string get_phonenbr() const;
+		std::string get_drksecret() const;
 		
 };
 
