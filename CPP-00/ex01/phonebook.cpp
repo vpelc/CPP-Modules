@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:28:54 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/10 17:59:03 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/13 14:10:49 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "phonebook.h"
 #include "contact.h"
 
-// Phonebook::Phonebook(void){}
+Phonebook::Phonebook(void) : nbr_contact(0){}
 
 Phonebook::~Phonebook(void){}
 
