@@ -6,13 +6,14 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:28:43 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/17 13:41:43 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/17 14:55:33 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <cstdlib>
 #include "contact.h"
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
@@ -30,6 +31,7 @@ class Phonebook{
 		void add_contact(void);
 		void search_contact(void);
 		void print_search(std::string str);
+		static void ft_getline(std::string &input);
 };
 
 

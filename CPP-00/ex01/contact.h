@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:11:23 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/10 15:06:08 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/17 17:16:09 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Contact
 	public :
 		Contact(void);
 		~Contact(void);
-		static Contact	new_contact(void);
+		static Contact new_contact(void);
 		std::string check_size(std::string str);
 		std::string get_firstname() const;
 		std::string get_lastname() const;

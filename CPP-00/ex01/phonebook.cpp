@@ -6,19 +6,30 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:28:54 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/17 13:45:51 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/17 17:15:02 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.h"
+#include "phonebook.h"\
 
 Phonebook::Phonebook(void) : nbr_contact(0){}
 
-Phonebook::~Phonebook(void){}
+Phonebook::~Phonebook(void)
+{}
 
 int	Phonebook::get_nbrContact(void)
 {
 	return this->nbr_contact;
+}
+
+void	Phonebook::ft_getline(std::string &input)
+{
+	getline(std::cin, input);
+	if (std::cin.eof() == true)
+	{
+		std::cout << std::endl << "Exiting (EOF signal)" << std::endl;
+		exit(0);
+	}
 }
 
 void	Phonebook::add_contact(void)
@@ -48,8 +59,9 @@ void	Phonebook::search_contact(void)
 		print_search(contact_list[i].get_nickname());
 		std::cout << std::endl;
 	}
-	getline(std::cin, index);
-	ind = std::atoi(index.c_str());
+	std::cout << "Choose the index of the contact you want to see" << std::endl;
+	ft_getline(index);
+	ind = atoi(index.c_str());
 	if (ind < 0 || ind > nbr_contact)
 		return ;
 	else
