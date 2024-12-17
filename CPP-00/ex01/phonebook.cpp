@@ -6,15 +6,11 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:28:54 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/13 14:10:49 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/17 13:45:51 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
-#include <string>
 #include "phonebook.h"
-#include "contact.h"
 
 Phonebook::Phonebook(void) : nbr_contact(0){}
 
@@ -38,7 +34,8 @@ void	Phonebook::add_contact(void)
 
 void	Phonebook::search_contact(void)
 {
-	int index;
+	std::string index;
+	int			ind;
 
 	std::cout << std::left << "|Index     |First name|Last Name |Nickname  |" << std::endl;
 	for(int i = 0; i < nbr_contact; i++)
@@ -51,16 +48,17 @@ void	Phonebook::search_contact(void)
 		print_search(contact_list[i].get_nickname());
 		std::cout << std::endl;
 	}
-	std::cin >> index;
-	if (index < 0 || index > nbr_contact)
+	getline(std::cin, index);
+	ind = std::atoi(index.c_str());
+	if (ind < 0 || ind > nbr_contact)
 		return ;
 	else
 	{
-		std::cout << "First name : " << contact_list[index - 1].get_firstname() << std::endl;
-		std::cout << "Last name : " << contact_list[index - 1].get_lastname() << std::endl;
-		std::cout << "Nickname : " << contact_list[index - 1].get_nickname() << std::endl;
-		std::cout << "Phone number : " << contact_list[index - 1].get_phonenbr() << std::endl; 
-		std::cout << "Darkest secret : " << contact_list[index - 1].get_drksecret() << std::endl;
+		std::cout << "First name : " << contact_list[ind - 1].get_firstname() << std::endl;
+		std::cout << "Last name : " << contact_list[ind - 1].get_lastname() << std::endl;
+		std::cout << "Nickname : " << contact_list[ind - 1].get_nickname() << std::endl;
+		std::cout << "Phone number : " << contact_list[ind - 1].get_phonenbr() << std::endl; 
+		std::cout << "Darkest secret : " << contact_list[ind - 1].get_drksecret() << std::endl;
 	}
 }
 

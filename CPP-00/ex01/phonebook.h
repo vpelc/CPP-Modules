@@ -6,10 +6,13 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:28:43 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/13 14:10:42 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/17 13:41:43 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include <iomanip>
+#include <string>
 #include "contact.h"
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
