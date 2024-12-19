@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:28:54 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/17 17:15:02 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/12/19 13:55:38 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 Phonebook::Phonebook(void) : nbr_contact(0){}
 
 Phonebook::~Phonebook(void)
-{}
+{
+	delete[] contact_list;	
+}
 
 int	Phonebook::get_nbrContact(void)
 {
