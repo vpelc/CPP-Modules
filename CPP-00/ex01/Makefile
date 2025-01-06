@@ -6,7 +6,7 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/10 17:59:30 by vpelc             #+#    #+#              #
-#    Updated: 2024/12/10 16:31:32 by vpelc            ###   ########.fr        #
+#    Updated: 2025/01/06 10:52:41 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME				= phonebook
 
 # Compiler and CFlags
 CC                  = g++
-CFLAGS              = -Wall -Werror -Wextra -std=c++98 #-g3
+CFLAGS              = -Wall -Werror -Wextra -std=c++98 -g3
 RM                  = rm -rf
 
 # Source files
