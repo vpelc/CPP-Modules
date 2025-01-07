@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:57:25 by vpelc             #+#    #+#             */
-/*   Updated: 2024/11/30 13:39:38 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/01/07 19:04:01 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ int main(int argc, char *argv[])
     return 0;  
 }
 
+/*
+	changes all letter in lowercase to uppercase
+*/
 char	*to_upper(char *str)
 {
 	int len = strlen(str);

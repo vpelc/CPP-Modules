@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:28:54 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/06 19:42:52 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/01/07 19:00:42 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ int	Phonebook::get_nbrContact(void)
 	return this->nbr_contact;
 }
 
+/*
+	Uses getline with an added security if Ctrl-D is pressed
+*/
 void	Phonebook::ft_getline(std::string &input)
 {
 	getline(std::cin, input);
@@ -31,6 +34,11 @@ void	Phonebook::ft_getline(std::string &input)
 	}
 }
 
+/*
+	Shifts the array by -1 
+		Deletes the first object(contact) of the array by writting over it
+	Adds the new contact at the end of the array
+*/
 void	Phonebook::add_fulllist(void)
 {
 	Contact	new_contact;
@@ -41,6 +49,17 @@ void	Phonebook::add_fulllist(void)
 	contact_list[7] = new_contact;
 }
 
+/*
+	Checks if the phonebook is full
+		if full : displays a message that it is full
+					and ask if the user wants to continue
+					(because adding a new contact will delete the oldest one)
+			if yes : cf add_fulllist(void)
+			if no  : quits to the base menu
+			else   : quits to the base menu (not the same message)
+		else    : simply adds the contact
+					increases the total of contact
+*/
 void	Phonebook::add_contact(void)
 {
 	Contact 	new_contact;
@@ -52,7 +71,7 @@ void	Phonebook::add_contact(void)
 		std::cout << "Adding this contact will erase the oldest one (index 1)" << std::endl;
 		std::cout << "Do you want to continue (Y/n)" << std::endl;
 		ft_getline(input);
-		if (input.compare("Y") == 0|| input.compare("y") == 0 || input.compare("\n") == 0)
+		if (input.compare("Y") == 0 || input.compare("y") == 0 || input.compare("\n") == 0)
 			add_fulllist();
 		else if (input.compare("n") == 0 || input.compare("N") == 0)
 			std::cout << "Canceling..." << std::endl;
@@ -65,6 +84,19 @@ void	Phonebook::add_contact(void)
 	nbr_contact++;
 }
 
+/*
+	Displays all the contact's :
+		Index | first name | last name | nickname
+	Let's the user choose the index of the contact
+	that the user wants to see 
+	converts to int and checks if the input is correct
+	if incorrect
+		if index is inside the phonebook (0 < x < 8)
+			but there is no contact error message
+			and goes back to base menu
+		else error message and goes back to base menu
+	else displays complete information of the contact
+*/
 void	Phonebook::search_contact(void)
 {
 	std::string index;
@@ -102,6 +134,10 @@ void	Phonebook::search_contact(void)
 	}
 }
 
+/*
+	displays the string given cuts it so it's
+	10 characters and replaces the last char with '.'
+*/
 void	Phonebook::print_search(std::string str)
 {
 	std::string cutstr;

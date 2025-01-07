@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:11:32 by vpelc             #+#    #+#             */
-/*   Updated: 2024/12/17 17:15:47 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/01/07 19:03:07 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,12 @@ std::string Contact::check_size(std::string str)
 	return str;
 }
 
+/*
+	Creates a new contact
+	Asks to fill all the information
+
+	return the object
+*/
 Contact	Contact::new_contact(void)
 {
 	Contact	new_contact;

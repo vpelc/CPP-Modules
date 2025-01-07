@@ -6,12 +6,11 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/10 17:59:30 by vpelc             #+#    #+#              #
-#    Updated: 2025/01/07 12:34:22 by vpelc            ###   ########.fr        #
+#    Updated: 2025/01/07 14:49:15 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Standard
-NAME_T				= 
 NAME				= account
 
 # Compiler and CFlags
