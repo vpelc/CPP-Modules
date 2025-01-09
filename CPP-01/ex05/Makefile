@@ -6,12 +6,12 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/10 17:59:30 by vpelc             #+#    #+#              #
-#    Updated: 2025/01/09 11:23:21 by vpelc            ###   ########.fr        #
+#    Updated: 2025/01/09 13:43:33 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Standard
-NAME				= harlFilter
+NAME				= harl
 
 # Compiler and CFlags
 CC                  = g++
