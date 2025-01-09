@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 15:58:32 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/08 20:13:39 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/01/09 13:11:18 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,11 @@ int main(int argc, char *argv[])
 	std::string Content, newContent;
 	std::string outFileName;
 
-	(void)argc;
+	if (argc != 4)
+	{
+		std::cerr << "Need 3 arguments : fileName toChange changedTo" << std::endl;
+		return 1;
+	}
 	inFile.open(argv[1], std::ios::in);
 	if(!inFile)
 	{
@@ -72,4 +76,5 @@ int main(int argc, char *argv[])
 	}
 	outFile << newContent;
 	outFile.close();
+	return 0;
 }

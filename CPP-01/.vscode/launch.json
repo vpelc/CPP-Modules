@@ -7,7 +7,7 @@
 		"name": "(gdb) Launch",
 		"type": "cppdbg",
 		"request": "launch",
-		"program": "${workspaceFolder}/ex03/war",
+		"program": "${workspaceFolder}/ex05/harlFilter",
 		"args": [],
 		"stopAtEntry": true,
 		"cwd": "${fileDirname}",
