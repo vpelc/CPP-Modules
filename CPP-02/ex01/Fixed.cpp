@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 21:37:03 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/10 16:30:10 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/01/10 17:08:38 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,26 @@ Fixed::Fixed( const Fixed& copy)
 }
 
 /*
+	Constructor takes a constant int shifts by the number of 
+	fractional bits(bitNbr) and stores the result in the fixed-point(fixNbr)
+*/
+Fixed::Fixed( const int nbr)
+{
+	this->fixNbr = nbr << this->bitNbr;
+	std::cout << "Int constructor called" << std::endl;
+}
+
+/*
+	Constructor takes a constant float shifts by the number of 
+	fractional bits(bitNbr) and stores the result in the fixed-point(fixNbr)
+*/
+Fixed::Fixed( const float nbr)
+{
+	this->fixNbr = roundf(nbr * (1 << this->bitNbr));
+	std::cout << "Float constructor called" << std::endl;
+}
+
+/*
 	Destructor
 */
 Fixed::~Fixed( void )
@@ -54,16 +74,42 @@ Fixed &Fixed::operator=(const Fixed &src)
 	return *this;
 }
 
+/*
+	Shifts the object's fixed-point and returns it as a float 
+*/
+float Fixed::toFloat( void ) const
+{
+	return (float)this->fixNbr / (float)(1 << this->bitNbr);
+}
+
+/*
+	Shifts the object's fixed-point and returns it
+*/
+int  Fixed::toInt( void ) const
+{
+	return this->fixNbr >> this->bitNbr;
+}
+
 // Getter
 int Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return this->fixNbr;
 }
 
 // Setter
 void Fixed::setRawBits( int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
+	// std::cout << "setRawBits member function called" << std::endl;
 	this->fixNbr = raw;
+}
+
+/*
+	Changes the behavior of the << operator when a Fixed
+	objects in converted as output
+*/
+std::ostream &operator<<(std::ostream &o, Fixed const &src)
+{
+	o << src.toFloat();
+	return o;
 }

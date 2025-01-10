@@ -6,12 +6,12 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/10 17:59:30 by vpelc             #+#    #+#              #
-#    Updated: 2025/01/10 16:07:38 by vpelc            ###   ########.fr        #
+#    Updated: 2025/01/10 19:08:29 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Standard
-NAME				= fix0
+NAME				= fix2
 
 # Compiler and CFlags
 CC                  = g++
