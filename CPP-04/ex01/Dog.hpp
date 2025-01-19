@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 14:30:57 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/17 18:28:21 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/01/19 14:22:44 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ class Dog : public Animal {
 				~Dog( void );
 				
 		Dog		&operator=(Dog const &src);
+		
+		Brain	&getBrain( void ) const;
+		void	setBrain( Brain brain );
 };
 
 #endif
