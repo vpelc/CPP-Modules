@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 14:30:57 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/28 14:34:23 by vpelc            ###   ########.fr       */
+/*   Created: 2025/01/28 15:28:37 by vpelc             #+#    #+#             */
+/*   Updated: 2025/01/28 15:29:35 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
-
-class Dog : public Animal {
-
-	private :
-	
-		Brain	*brain;
-
-	public :
-	
-		void	makeSound( void ) const;
-				Dog( void );
-				Dog(const Dog& copy);
-				~Dog( void );
-				
-		Dog		&operator=(Dog const &src);
-		
-		Brain	&getBrain( void ) const;
-		void	setBrain( Brain &brain );
+class AMateria
+{
+	protected:
+		[...]
+		public:
+		AMateria(std::string const & type);
+		[...]
+		std::string const & getType() const; //Returns the materia type
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 };
-
-#endif

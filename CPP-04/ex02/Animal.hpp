@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 17:18:47 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/17 17:26:53 by vpelc            ###   ########.fr       */
+/*   Created: 2025/01/28 14:25:16 by vpelc             #+#    #+#             */
+/*   Updated: 2025/01/28 15:21:34 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 # include <string>
 # include <iostream>
+# include "Brain.hpp"
 
-class WrongAnimal{
+class Animal{
 	
 	protected :
 	
-		std::string		type;	
+		std::string		type;
+						Animal( void );
+						Animal(const Animal& copy);
 		
 	public :
 	
 		virtual void	makeSound( void ) const;
-						WrongAnimal( void );
-						WrongAnimal(const WrongAnimal& copy);
-		virtual			~WrongAnimal( void );
+		
+		virtual			~Animal( void );
 				
-		WrongAnimal		&operator=(WrongAnimal const &src);
+		Animal		&operator=(Animal const &src);
 
 		std::string		getType( void ) const;
 		void			setType( std::string type);
+		virtual Brain	&getBrain( void ) const = 0 ; 
+		
 };
 
 #endif
