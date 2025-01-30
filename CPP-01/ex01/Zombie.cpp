@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 13:38:35 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/07 18:17:07 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/01/30 13:11:55 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,13 @@ Zombie::~Zombie( void )
 	std::cout << name << ": is dead for good (normally ...)" << std::endl;
 }
 
-void	Zombie::announce( void )
+void Zombie::announce( void )
 {
 	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-void	Zombie::setName( std::string name )
-{
-	this->name = name;
-}
+// Getter
+std::string Zombie::getName( void ) { return this->name; }
+
+// Setter
+void Zombie::setName( std::string name ) { this->name = name; }

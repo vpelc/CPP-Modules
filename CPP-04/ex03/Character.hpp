@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 15:28:37 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/30 17:53:46 by vpelc            ###   ########.fr       */
+/*   Created: 2025/01/30 17:27:53 by vpelc             #+#    #+#             */
+/*   Updated: 2025/01/30 17:53:54 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-#define AMATERIA_HPP
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
-# include <string>
-# include <iostream>
 # include "ICharacter.hpp"
 
-class AMateria
+class Character : public ICharacter
 {
-	protected : 
+	private :
 	
-		std::string			type;
-		
+		std::string			name;
+		AMateria*			inventory[4];
+	
 	public :
-							AMateria( void );					
-							AMateria(std::string const &type);
-							AMateria( AMateria const &copy);
-							~AMateria( void );
+	
+							Character( std::string );
+							Character( Character const &copy);	
+							~Character( void );
 		
-		virtual AMateria*	clone( void ) const = 0;
-		virtual void 		use(ICharacter& target);
+		Character			&operator=(Character const &src);
 		
-		std::string const 	&getType() const; //Returns the materia type
+		void				equip(AMateria* m);
+		void				unequip(int idx);
+		void				use(int idx, ICharacter& target);
+		
+		std::string const	&getName() const;
 };
 
 #endif

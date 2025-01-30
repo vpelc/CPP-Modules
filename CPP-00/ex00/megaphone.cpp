@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:57:25 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/07 19:04:01 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/01/30 14:34:44 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int main(int argc, char *argv[])
 	for(int i = 1; i < argc; i++)
 	{
     	std::cout << to_upper(argv[i]);
+		if (argc > 2)
+			std::cout << " ";
 	}
 	std::cout << std::endl;
     return 0;  

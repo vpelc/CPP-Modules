@@ -6,11 +6,13 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:04:26 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/08 14:36:07 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/01/30 14:15:28 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
+
+// HumanB::HumanB( void ) : name("Ray") {}
 
 HumanB::HumanB( std::string name ) : name(name){}
 
@@ -22,7 +24,9 @@ void HumanB::attack( void )
 		<< this->weapon->getType() << std::endl; 
 }
 
-void HumanB::setWeapon( Weapon &weapon)
-{
-	this->weapon = &weapon;
-}
+
+// Getter
+Weapon &HumanB::getWeapon( void ) { return this->weapon; }
+
+// Setter
+void HumanB::setWeapon( Weapon &weapon) { this->weapon = &weapon; }

@@ -6,25 +6,30 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:34:01 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/08 15:15:17 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/01/30 13:27:06 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_H
-#define WEAPON_H
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
 #include <string>
 
 class Weapon{
 
 	private :
+	
 		std::string type;
 	
 	public :
+
+							Weapon( void ); 
+							Weapon( std::string type );
+							~Weapon( void );
+		
 		const std::string&	getType( void ) const;
-		void			setType (std::string newtype);
-						Weapon( std::string type );
-						~Weapon( void );
+		void				setType (std::string newtype);
+		
 };
 
 
