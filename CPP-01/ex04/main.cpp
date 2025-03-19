@@ -14,34 +14,36 @@
 #include <iostream>
 #include <fstream>
 
-int replace(std::string& result, std::string s1, std::string s2)
+std::string replace(std::string source, std::string s1, std::string s2)
 {
 	size_t	found;
-	std::string start, end;
+	std::string start, end, result;
 	
+	result = source;
 	found = result.find(s1);
-
-	if (found != std::string::npos)
+	while (s1.compare("") && found != std::string::npos)
 	{
 		start = result.substr(0, found);
 		end = result.substr(found + (s1.length()));
 		result = start;
 		result.append(s2);
 		result.append(end);
-		return 1;
+		if (end.find(s1) != std::string::npos)
+			found += end.find(s1) + (s2.length());
+		else
+			break;
 	}
-	else
-		return 0;
+	return result;
 }
 
-std::string replaceAll(std::string content, std::string s1, std::string s2)
-{
-	int finish = 1;
+// std::string replaceAll(std::string content, std::string s1, std::string s2)
+// {
+// 	int finish = 1;
 	
-	while(finish)
-		finish = replace(content, s1, s2);
-	return content;
-}
+// 	while(finish)
+// 		finish = replace(content, s1, s2);
+// 	return content;
+// }
 
 int main(int argc, char *argv[])
 {
@@ -64,7 +66,7 @@ int main(int argc, char *argv[])
 	std::getline(inFile, Content, '\0');
 	inFile.close();
 
-	newContent = replaceAll(Content, argv[2], argv[3]);
+	newContent = replace(Content, argv[2], argv[3]);
 	
 	outFileName = argv[1];
 	outFileName.append(".replace");
