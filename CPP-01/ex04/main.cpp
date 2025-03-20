@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 15:58:32 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/09 13:11:18 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/03/20 12:44:21 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,6 @@ std::string replace(std::string source, std::string s1, std::string s2)
 	}
 	return result;
 }
-
-// std::string replaceAll(std::string content, std::string s1, std::string s2)
-// {
-// 	int finish = 1;
-	
-// 	while(finish)
-// 		finish = replace(content, s1, s2);
-// 	return content;
-// }
 
 int main(int argc, char *argv[])
 {
