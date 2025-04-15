@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 18:55:01 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/10 19:05:54 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/04/15 13:19:37 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Fixed{
 							Fixed (const float nbr);
 							Fixed( const Fixed& copy);
 							~Fixed( void );
+							
 		Fixed				&operator=(const Fixed &src);
 		bool				operator<(Fixed src) const;
 		bool				operator>(Fixed src) const;
@@ -44,10 +45,13 @@ class Fixed{
 		Fixed				operator--( void );
 		Fixed				operator++( int );
 		Fixed				operator--( int );
+		
 		int					getRawBits( void ) const;
 		void				setRawBits( int const raw);
+		
 		float				toFloat( void ) const;
 		int					toInt( void ) const;
+		
 		static Fixed		&min(Fixed &nbr1, Fixed &nbr2);
 		static const Fixed	&min(const Fixed &nbr1, const Fixed &nbr2);
 		static Fixed		&max(Fixed &nbr1, Fixed &nbr2);

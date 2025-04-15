@@ -6,7 +6,7 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/10 17:59:30 by vpelc             #+#    #+#              #
-#    Updated: 2025/01/10 19:08:29 by vpelc            ###   ########.fr        #
+#    Updated: 2025/04/15 16:48:29 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS              = -Wall -Werror -Wextra -std=c++98 -g3
 RM                  = rm -rf
 
 # Source files
-SRCS				= main.cpp Fixed.cpp
+SRCS				= main.cpp Fixed.cpp Point.cpp BSP.cpp
 
 # File paths
 OBJ					=  $(SRCS:.cpp=.o)
