@@ -109,14 +109,11 @@ void Harl::complain(std::string level)
 	switch (i)
 	{
 	case DEBUG:
-		(this->*functionPTRS[0])();
-		 __attribute__ ((fallthrough));
+		(this->*functionPTRS[0])();	//fall through
 	case INFO:
-		(this->*functionPTRS[1])();
-		 __attribute__ ((fallthrough));
+		(this->*functionPTRS[1])();	//fall through
 	case WARNING:
-		(this->*functionPTRS[2])();
-		 __attribute__ ((fallthrough));
+		(this->*functionPTRS[2])();	//fall through
 	case ERROR:
 		(this->*functionPTRS[3])();
 		break;
