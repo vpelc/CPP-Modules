@@ -13,6 +13,8 @@ const char *Intern::InvalidFormNameException::what() const throw()
     return ("Invalid form name!");
 }
 
+Intern &Intern::operator=(Intern const &src) { (void) src; return *this; }
+
 void nameToLower(std::string &name)
 {
 	for (size_t i = 0; i < name.length(); i++)
@@ -29,19 +31,17 @@ AForm *Intern::makeForm(std::string formName, std::string target)
 	
 	nameToLower(formName);
 	while (i < size && _form_names[i].compare(formName) != 0)
-	{
 		i++;
-	}
-	i++;
+	// i++;
 	switch (i)
 	{
-		case 1:
+		case 0:
 			form = new PresidentialPardonForm(target);
 			break;
-		case 2:
+		case 1:
 			form = new RobotomyRequestForm(target);
 			break;
-		case 3:
+		case 2:
 			form = new ShrubberyCreationForm(target);
 			break;
 		default:
@@ -52,3 +52,4 @@ AForm *Intern::makeForm(std::string formName, std::string target)
 	std::cout << "Intern creates " << formName << std::endl;
 	return form;
 }
+

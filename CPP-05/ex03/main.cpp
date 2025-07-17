@@ -34,11 +34,11 @@ int main()
 
         Intern i1;
 
-        AForm *f1 = i1.makeForm("presidential pardon", "Josh");
-        AForm *f2 = i1.makeForm("robotomy request", "Paul");
-        AForm *f3 = i1.makeForm("shrubbery creation", "Nathan");
+        AForm *f1 = i1.makeForm("presidEntial pardon", "Josh");
+        AForm *f2 = i1.makeForm("robotoMy request", "Paul");
+        AForm *f3 = i1.makeForm("shrubBery creation", "Nathan");
         
-        AForm *f4 = i1.makeForm("insane initialisation", "Nathan");
+        // AForm *f4 = i1.makeForm("insane initialisation", "Nathan");
         
 
         // b3.signForm(*f2);
@@ -50,7 +50,7 @@ int main()
         // b3.signForm(*f3);
         b1.signForm(*f3);
         
-        b1.signForm(*f4);
+        // b1.signForm(*f4);
 
         b1.executeForm(*f1);
 
