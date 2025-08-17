@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 14:25:16 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/28 15:21:34 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/07/18 12:34:45 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Animal{
 		
 		virtual			~Animal( void );
 				
-		Animal		&operator=(Animal const &src);
+		Animal			&operator=(Animal const &src);
 
 		std::string		getType( void ) const;
 		void			setType( std::string type);

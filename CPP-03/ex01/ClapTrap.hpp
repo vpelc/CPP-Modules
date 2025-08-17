@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 13:33:18 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/14 16:32:19 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/07/18 12:25:35 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <string>
 #include <iostream>
 
-class ClapTrap{
+class ClapTrap {
 
 	protected : 
 		
@@ -41,4 +41,4 @@ class ClapTrap{
 	
 };
 
-#endif 
+#endif
