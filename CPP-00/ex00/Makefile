@@ -6,7 +6,7 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/10 17:59:30 by vpelc             #+#    #+#              #
-#    Updated: 2024/12/10 16:31:24 by vpelc            ###   ########.fr        #
+#    Updated: 2025/08/18 16:11:03 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME				= megaphone
 
 # Compiler and CFlags
-CC                  = g++
+CC                  = c++
 CFLAGS              = -Wall -Werror -Wextra #-std=c++98 #-g3
 RM                  = rm -rf
 
