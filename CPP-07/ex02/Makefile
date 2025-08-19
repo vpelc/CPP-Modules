@@ -6,12 +6,12 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/10 17:59:30 by vpelc             #+#    #+#              #
-#    Updated: 2025/08/18 16:19:59 by vpelc            ###   ########.fr        #
+#    Updated: 2025/08/19 15:01:50 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Standard
-NAME				= iter
+NAME				= array
 
 # Compiler and CFlags
 CC                  = c++
