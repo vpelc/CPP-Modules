@@ -4,18 +4,18 @@
 void check_file_type(char *arg)
 {
 	if (std::strlen(arg) < 4)
-		throw incorrectFileType();
+		throw incorrectFileTypeException();
 	char *ext = arg + (std::strlen(arg) - 4);
 	if (std::strcmp(ext, ".txt"))
-		throw incorrectFileType();
+		throw incorrectFileTypeException();
 }
 
 void check_nb_arg(int argc)
 {
 	if (argc > 2)
-		throw tooManyArgmunents();
+		throw tooManyArgmunentsException();
 	else if (argc < 2);
-		throw tooFewArgmunents();
+		throw tooFewArgmunentsException();
 }
 
 void check_arg(int argc, char *argv[])

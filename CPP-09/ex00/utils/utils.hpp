@@ -5,23 +5,24 @@
 #include <iostream>
 #include <cstring>
 #include <fstream>
+#include <ctime>
 
-class incorrectFileType : public std::exception{
+class incorrectFileTypeException : public std::exception{
 	const char* what() const throw()
 		{ return "error : incorrect file type";}
 };
 
-class tooManyArgmunents : public std::exception{
+class tooManyArgmunentsException : public std::exception{
 	const char* what() const throw()
 		{ return "error : too many arguments";}
 };
 
-class tooFewArgmunents : public std::exception{
+class tooFewArgmunentsException : public std::exception{
 	const char* what() const throw()
 		{ return "error : too few arguments";}
 };
 
-class openFileError : public std::exception{
+class openFileErrorException : public std::exception{
 	const char* what() const throw()
 		{ return "error : could not open file";}
 };
@@ -29,6 +30,11 @@ class openFileError : public std::exception{
 class emptyFileException : public std::exception{
 	const char* what() const throw()
 		{ return "error : file is empty";}
+};
+
+class wrongFormatException : public std::exception{
+	const char* what() const throw()
+		{ return "error : wrong format in file";}
 };
 
 
@@ -41,5 +47,5 @@ void	check_arg(int argc, char *argv[]);
 // CheckFile
 
 void	check_if_empty(std::ifstream &file);
-void	check_data_format();
+void	check_input_format(std::string);
 // void	
