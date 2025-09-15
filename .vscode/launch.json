@@ -8,7 +8,7 @@
 		"name": "(gdb) Launch",
 		"type": "cppdbg",
 		"request": "launch",
-		"program": "${workspaceFolder}/CPP-08/ex00/easyfind",
+		"program": "${workspaceFolder}/CPP-08/ex01/span",
 		"args": [],
 		"stopAtEntry": true,
 		"cwd": "${workspaceFolder}",

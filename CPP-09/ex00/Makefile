@@ -6,12 +6,12 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/10 17:59:30 by vpelc             #+#    #+#              #
-#    Updated: 2025/08/27 15:44:20 by vpelc            ###   ########.fr        #
+#    Updated: 2025/08/29 14:11:36 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Standard
-NAME				= span
+NAME				= btc
 
 # Compiler and CFlags
 CC                  = c++
@@ -19,7 +19,7 @@ CFLAGS              = -Wall -Werror -Wextra -std=c++98 -g3
 RM                  = rm -rf
 
 # Source files
-SRCS				= main.cpp Span/Span.cpp
+SRCS				= main.cpp 
 
 # File paths
 OBJ					=  $(SRCS:.cpp=.o)
