@@ -17,34 +17,7 @@ void check_if_empty(std::ifstream &file)
 		throw emptyFileException();
 }
 
-int get_time(std::string date)
-{
-	std::time_t t = std::time(0);
-    std::tm* now = std::localtime(&t);
-	int year, month, day;
-	
 
-}
-
-void check_year(std::string year)
-{
-	if (year.length() != 4)
-		throw wrongFormatException();
-	for (int i = 0; i < 4; i++)
-	{
-		if (!isdigit(year[i]))
-		throw wrongFormatException();
-	}
-	int y = atoi(year.c_str());
-	if (y < 2009)
-		throw wrongFormatException();		// change exception impossible year
-}
-
-
-void check_date()
-{
-
-}
 
 void check_input_format(std::string line)
 {
@@ -52,6 +25,7 @@ void check_input_format(std::string line)
 	
 	sep_pos = line.find('|');
 	std::string date = line.substr(0, sep_pos);
-	
+	check_date(date);
+	std::string value = line.substr(sep_pos + 1,  line.length());
 }
 

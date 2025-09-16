@@ -6,6 +6,7 @@
 #include <cstring>
 #include <fstream>
 #include <ctime>
+#include <sstream>
 
 class incorrectFileTypeException : public std::exception{
 	const char* what() const throw()
@@ -48,4 +49,6 @@ void	check_arg(int argc, char *argv[]);
 
 void	check_if_empty(std::ifstream &file);
 void	check_input_format(std::string);
-// void	
+
+// CheckDate
+void	check_date(std::string date);
