@@ -1,4 +1,4 @@
-#include "utils.hpp"
+#include "checks.hpp"
 
 
 void check_file_type(char *arg)

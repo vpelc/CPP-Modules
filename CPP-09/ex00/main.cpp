@@ -1,5 +1,5 @@
 #include "BitcoinExchange/BitcoinExchange.hpp"
-#include "utils/utils.hpp"
+#include "checks/checks.hpp"
 
 int main(int argc, char *argv[])
 {

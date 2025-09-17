@@ -1,4 +1,4 @@
-#include "utils.hpp"
+#include "checks.hpp"
 
 static int check_bounds(int year, int month, int day)
 {
@@ -34,8 +34,13 @@ void check_date(std::string date)
 	int year, month, day;
 	char sep;
 	std::stringstream ss(date);
-	ss >> year >> sep >> month >> sep >> day;
-	if (ss.fail() || sep != '-')
+	if (ss >> year >> sep >> month >> sep >> day)
+	{
+		ss >> std::ws;
+		if (!ss.eof() || sep != '-')
+			throw wrongFormatException();
+	}
+	else
 		throw wrongFormatException();
 	check_valid_date(year,  month, day);
 	check_bounds(year, month, day);
