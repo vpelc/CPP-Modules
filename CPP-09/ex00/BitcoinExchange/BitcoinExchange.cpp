@@ -44,13 +44,17 @@ std::map<std::string, float>::const_iterator BitcoinExchange::findClosestDate (c
 	return it;
 }
 
-float BitcoinExchange::search_rate_for_value()
+void BitcoinExchange::search_rate_for_value()
 {
 	std::map<std::string, float>::const_iterator data_it;
+	float r_value;
 	for (std::map<std::string, float>::iterator input_it = _inputFile_list.begin();
 			input_it != _inputFile_list.end(); input_it++)
 	{
+		check_date(input_it->first);
+		check_value(input_it->second);
 		data_it = findClosestDate(input_it->first);
-		return input_it->second * data_it->second ;
+		r_value =  input_it->second * data_it->second;
+		std::cout << "(" << input_it->first << ") => " << input_it->first << " = " << r_value << std::endl;
 	}
 }

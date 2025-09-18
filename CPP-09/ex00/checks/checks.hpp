@@ -8,6 +8,8 @@
 #include <ctime>
 #include <sstream>
 
+# define MAX_VALUE 1000
+
 class incorrectFileTypeException : public std::exception{
 	const char* what() const throw()
 		{ return "error : incorrect file type";}
@@ -52,3 +54,7 @@ void	check_input_format(std::string);
 
 // CheckDate
 void	check_date(std::string date);
+
+// CheckValue
+
+void	check_value(float value);

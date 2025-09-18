@@ -14,6 +14,8 @@ float input_get_value_from_line(std::string line)
 	int sep_pos;
 	
 	sep_pos = line.find('|');
+	if (sep_pos == std::string::npos)
+		return -1;
 	std::string val = line.substr(sep_pos + 1, line.length());
 	char *end;
 	float value = std::strtof(val.c_str(), &end);
@@ -36,7 +38,7 @@ void BitcoinExchange::fill_input_list()
 	while (!line.empty())
 	{
 		getline(_inputFile, line);
-		check_input_format(line);
+		// check_input_format(line);
 		input_add_line_to_list(line);
 	}
 }
