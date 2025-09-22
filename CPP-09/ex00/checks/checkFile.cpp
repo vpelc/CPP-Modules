@@ -17,4 +17,14 @@ void check_if_empty(std::ifstream &file)
 		throw emptyFileException();
 }
 
+void check_line_format(std::string line)
+{
+	size_t sep_pos;
+	
+	sep_pos = line.find('|');
+	if (sep_pos == std::string::npos
+		|| (line[sep_pos - 1] != ' ' && line[sep_pos + 1] != ' '))
+		throw badInputException();
+
+}
  

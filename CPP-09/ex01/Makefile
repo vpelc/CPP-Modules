@@ -6,12 +6,12 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/10 17:59:30 by vpelc             #+#    #+#              #
-#    Updated: 2025/09/19 16:44:35 by vpelc            ###   ########.fr        #
+#    Updated: 2025/09/22 15:03:37 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Standard
-NAME				= btc
+NAME				= RPN
 
 # Compiler and CFlags
 CC                  = c++
@@ -20,13 +20,7 @@ RM                  = rm -rf
 
 # Source files
 SRCS				= main.cpp \
-						BitcoinExchange/BitcoinExchange.cpp \
-						BitcoinExchange/fillListData.cpp \
-						BitcoinExchange/fillListInput.cpp \
-						checks/checkArguments.cpp \
-						checks/checkDate.cpp \
-						checks/checkFile.cpp \
-						checks/checkValue.cpp 
+					
 
 # Object directory
 OBJDIR = obj

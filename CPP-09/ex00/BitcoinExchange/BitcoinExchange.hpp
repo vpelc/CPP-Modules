@@ -6,8 +6,9 @@
 #include <string>
 #include <fstream>
 #include <algorithm>
+#include <unistd.h>
 
-#include "checks/checks.hpp"
+#include "../checks/checks.hpp"
 
 
 

@@ -34,12 +34,14 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &src)
 		if (!_dataFile || !_inputFile)
 			throw openFileErrorException();
 	}
+	return *this;
 }
 
-std::map<std::string, float>::const_iterator BitcoinExchange::findClosestDate (const std::string& target)
+std::map<std::string, float>::const_iterator
+	BitcoinExchange::findClosestDate (const std::string& target)
 {
 	std::map<std::string, float>::const_iterator it =
-		std::upper_bound(_dataFile_list.begin(), _dataFile_list.end(), target);
+		_dataFile_list.upper_bound(target);
 	--it;
 	return it;
 }
@@ -49,12 +51,20 @@ void BitcoinExchange::search_rate_for_value()
 	std::map<std::string, float>::const_iterator data_it;
 	float r_value;
 	for (std::map<std::string, float>::iterator input_it = _inputFile_list.begin();
-			input_it != _inputFile_list.end(); input_it++)
+			input_it != _inputFile_list.end(); ++input_it)
 	{
-		check_date(input_it->first);
-		check_value(input_it->second);
-		data_it = findClosestDate(input_it->first);
-		r_value =  input_it->second * data_it->second;
-		std::cout << "(" << input_it->first << ") => " << input_it->first << " = " << r_value << std::endl;
+		try {
+			// std::cout << input_it->first << "    ";
+			// std::cout << input_it->second << std::endl;
+			check_date(input_it->first);
+			check_value(input_it->second);
+			data_it = findClosestDate(input_it->first);
+			r_value =  input_it->second * data_it->second;
+			std::cout << "(" << input_it->first << ") => "
+			<< input_it->second << " = " << r_value << std::endl;
+		}
+		catch(const std::exception& e) {
+			std::cerr << e.what() << std::endl;
+		}
 	}
 }

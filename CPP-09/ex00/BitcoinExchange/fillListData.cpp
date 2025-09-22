@@ -29,14 +29,10 @@ void BitcoinExchange::data_add_line_to_list(std::string line)
 
 void BitcoinExchange::fill_data_list()
 {
-	int i = 0;
 	std::string line;
 
 	getline(_dataFile, line);
-	while (!line.empty())
-	{
-		getline(_dataFile, line);
+	while (getline(_dataFile, line))
 		data_add_line_to_list(line);
-	}
 }
 
