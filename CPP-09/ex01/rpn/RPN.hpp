@@ -3,15 +3,13 @@
 #include <stack>
 #include <exception>
 #include <locale>
+#include "../checks/checks.hpp"
 
 class RPN{
 
 	private :
 
 		std::stack<int> 	_num_stack;
-		std::stack<char>	_oper_stack;
-
-
 
 	public :
 
@@ -26,17 +24,25 @@ class RPN{
 		void		multiplication(void);
 		void		division(void);
 
-		bool		is_operator(char c);
+		void		get_operator(char c);
 		void		parse(char *arg);
 
+		int			get_stack_top(void) const;
 
 		class divisionByZeroException : public std::exception{
 			const char* what() const throw()
-				{ return "error : could not open file";}
+				{ return "error : division by zero";}
 		};
 
-		class invalidCharException : public std::exception{
+		class notEnoughNumbersException : public std::exception{
 			const char* what() const throw()
 				{ return "error : could not open file";}
 		};
+
+		class notEnoughOperatorsException : public std::exception{
+			const char* what() const throw()
+				{ return "error : could not open file";}
+		};
+
+		
 };

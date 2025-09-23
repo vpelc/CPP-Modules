@@ -6,7 +6,7 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/10 17:59:30 by vpelc             #+#    #+#              #
-#    Updated: 2025/09/22 15:03:37 by vpelc            ###   ########.fr        #
+#    Updated: 2025/09/23 18:10:56 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ RM                  = rm -rf
 
 # Source files
 SRCS				= main.cpp \
-					
+						rpn/RPN.cpp \
+						rpn/operations.cpp \
+						checks/checkArguments.cpp
 
 # Object directory
 OBJDIR = obj

@@ -2,9 +2,9 @@
 
 void RPN::addition()
 {
-	int num1 = _num_stack.top();
-	_num_stack.pop();
 	int num2 = _num_stack.top();
+	_num_stack.pop();
+	int num1 = _num_stack.top();
 	_num_stack.pop();
 	int res = num1 + num2;
 	_num_stack.push(res);
@@ -12,9 +12,9 @@ void RPN::addition()
 
 void RPN::substraction()
 {
-	int num1 = _num_stack.top();
-	_num_stack.pop();
 	int num2 = _num_stack.top();
+	_num_stack.pop();
+	int num1 = _num_stack.top();
 	_num_stack.pop();
 	int res = num1 - num2;
 	_num_stack.push(res);
@@ -22,9 +22,9 @@ void RPN::substraction()
 
 void RPN::multiplication()
 {
-	int num1 = _num_stack.top();
-	_num_stack.pop();
 	int num2 = _num_stack.top();
+	_num_stack.pop();
+	int num1 = _num_stack.top();
 	_num_stack.pop();
 	int res = num1 * num2;
 	_num_stack.push(res);
@@ -32,9 +32,9 @@ void RPN::multiplication()
 
 void RPN::division()
 {
-	int num1 = _num_stack.top();
-	_num_stack.pop();
 	int num2 = _num_stack.top();
+	_num_stack.pop();
+	int num1 = _num_stack.top();
 	_num_stack.pop();
 	if (num2 == 0)
 		throw divisionByZeroException();
@@ -42,28 +42,17 @@ void RPN::division()
 	_num_stack.push(res);
 }
 
-bool RPN::is_operator(char c)
+
+void RPN::get_operator(char c)
 {
+	if (_num_stack.size() < 2)
+		throw notEnoughNumbersException();
 	if (c == '+')
-	{
 		addition();
-		return true;
-	}
 	else if (c == '-')
-	{
 		substraction();
-		return true;
-	}
 	else if (c == '*')
-	{
 		multiplication();
-		return true;
-	}
 	else if (c == '/')
-	{
 		division();
-		return true;
-	}
-	else
-		throw invalidCharException();
 }
