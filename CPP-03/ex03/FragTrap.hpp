@@ -6,12 +6,12 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:48:34 by vpelc             #+#    #+#             */
-/*   Updated: 2025/01/16 17:38:11 by vpelc            ###   ########.fr       */
+/*   Updated: 2025/09/25 21:20:48 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_H
-#define FRAFTRAP_H
+#define FRAGTRAP_H
 
 #include "ClapTrap.hpp"
 
