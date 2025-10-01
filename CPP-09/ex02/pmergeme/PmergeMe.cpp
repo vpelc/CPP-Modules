@@ -1,6 +1,8 @@
 #include "PmergeMe.hpp"
+#include "sort_utils.hpp"
 
-PmergeMe::PmergeMe() : _comp_count(0) {}
+
+PmergeMe::PmergeMe() : _prev_jacobsthal_nbr(0), _nbr_inserted_nbrs(0) {}
 
 PmergeMe::PmergeMe(const PmergeMe& pm) { (void)pm; }
 
