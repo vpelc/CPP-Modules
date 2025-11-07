@@ -60,7 +60,7 @@ void BitcoinExchange::search_rate_for_value()
 			check_value(input_it->second);
 			data_it = findClosestDate(input_it->first);
 			r_value =  input_it->second * data_it->second;
-			std::cout << "(" << input_it->first << ") => "
+			std::cout << "(" << input_it->first << ") => " << std::fixed << std::setprecision(7)
 			<< input_it->second << " = " << r_value << std::endl;
 		}
 		catch(const std::exception& e) {
