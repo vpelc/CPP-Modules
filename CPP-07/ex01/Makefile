@@ -6,7 +6,7 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/10 17:59:30 by vpelc             #+#    #+#              #
-#    Updated: 2025/08/18 16:19:59 by vpelc            ###   ########.fr        #
+#    Updated: 2025/11/25 15:06:45 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ CFLAGS              = -Wall -Werror -Wextra -std=c++98 -g3
 RM                  = rm -rf
 
 # Source files
+# SRCS				= ex01.cpp 
 SRCS				= main.cpp 
 
 # File paths

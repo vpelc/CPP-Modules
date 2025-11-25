@@ -29,8 +29,8 @@ class Array {
 template <typename Type>
 Array<Type>::Array()
 {
-	T = new Type[0];
-    _size = 0;
+	T = new Type[1];
+    _size = 1;
 }
 
 

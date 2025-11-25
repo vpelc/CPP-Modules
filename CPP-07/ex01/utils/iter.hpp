@@ -2,11 +2,18 @@
 
 #include <iostream>
 
-template <typename Type>
-void iter(Type *arrayAddress, int arrayLength, Type (*func)(Type const&))
+template <typename T1, typename T2>
+void iter(T1 *arrayAddress, const int arrayLength, T2 (*func)(T1 const&))
 {
 	for (int i = 0; i < arrayLength; i++)
-		arrayAddress[i] = func(arrayAddress[i]);
+		func(arrayAddress[i]);
+}
+
+template <typename T1, typename T2>
+void iter(T1 *arrayAddress, const int arrayLength, T2 (*func)(T1 &))
+{
+	for (int i = 0; i < arrayLength; i++)
+		func(arrayAddress[i]);
 }
 
 template <typename Type>
@@ -16,8 +23,7 @@ Type bitShift(Type const &param)
 }
 
 template <typename Type>
-Type display(Type const &param)
+void display(Type const &param)
 {
 	std::cout << param << std::endl ;
-	return param;
 }
