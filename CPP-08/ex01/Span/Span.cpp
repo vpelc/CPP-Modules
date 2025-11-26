@@ -40,31 +40,39 @@ int Span::shortestSpan()
 		throw oneMemberListException();
 	for(std::vector<int>::iterator it = _list.begin(); it != _list.end(); ++it)
 	{
-		if (shortest > sqrt(pow((*it - (*(it + 1))), 2)))
-			shortest = sqrt(pow((*it - (*(it + 1))), 2));
+		for (std::vector<int>::iterator jt = it + 1; jt != _list.end(); ++jt)
+		{
+			if (shortest > sqrt(pow((*it - *jt), 2)))
+				shortest = sqrt(pow((*it - *jt), 2));
+		}
 	}
 	return shortest;
 }
 
 int Span::longestSpan()
 {
-	int longest = INT_MIN;
+	int min = INT_MAX;
+	int max = INT_MIN;
 	if (_currLength < 1)
 		throw listEmptyException();
 	if (_currLength == 1)
 		throw oneMemberListException();
 	for(std::vector<int>::iterator it = _list.begin(); it != _list.end(); ++it)
 	{
-		if (longest < sqrt(pow((*it - (*(it + 1))), 2)))
-			longest = sqrt(pow((*it - (*(it + 1))), 2));
+		if (min > *it)
+		min = *it;
 	}
-	return longest;
+	for(std::vector<int>::iterator it = _list.begin(); it != _list.end(); ++it)
+	{
+		if (max < *it)
+		max = *it;
+	}
+	return max - min;
+
 }
 
 void Span::multiAddNumber(unsigned int num)
 {
-	// if (num <= 0)
-	// 	throw negativeOrZeroNumException();
 	if (num + _currLength > _maxLength)
 		throw tooManyNumbersException();
 	for (unsigned int i = 0; i < num; i++)

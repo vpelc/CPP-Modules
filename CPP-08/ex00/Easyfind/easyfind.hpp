@@ -3,9 +3,9 @@
 #include <vector>
 #include <exception>
 
-class numberNotFound : public std::exception {
+class numberNotFoundException : public std::exception {
 	public :
-		const char* what() const throw() { return "error"; }
+		const char* what() const throw() { return "error : number not found"; }
 
 };
 
@@ -17,6 +17,6 @@ int easyfind(T container, int n)
 		if (*it == n)
 			return *it;
 	}
-	throw numberNotFound();
+	throw numberNotFoundException();
 	return 0;
 }
