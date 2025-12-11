@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <exception>
+#include <algorithm>
 
 class numberNotFoundException : public std::exception {
 	public :
@@ -12,11 +13,9 @@ class numberNotFoundException : public std::exception {
 template <typename T>
 int easyfind(T container, int n)
 {
-	for(typename T::iterator it = container.begin(); it != container.end(); ++it)
-	{
-		if (*it == n)
-			return *it;
-	}
-	throw numberNotFoundException();
-	return 0;
+	T<int>::iterator it;
+	it = find(container.begin(), container.end(), n);
+	if (it == container.end() && *it != n)
+		throw numberNotFoundException();
+	return *it;
 }
