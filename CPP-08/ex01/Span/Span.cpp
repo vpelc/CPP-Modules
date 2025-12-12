@@ -42,24 +42,25 @@ int Span::shortestSpan()
 
 	Span tmp = *this;
 	sort(tmp._list.begin(), tmp._list.end());
-	for(std::vector<int>::iterator it = _list.begin(); it != _list.end(); ++it)
+	for(std::vector<int>::iterator it = _list.begin(); it + 1 != _list.end(); ++it)
 	{
-		if (shortest > (*it + 1 - *it))
-			shortest = (*it + 1 - *it);
+		if (shortest > (*(it + 1) - *it))
+			shortest = (*(it + 1) - *it);
 	}
 	return shortest;
 }
 
 int Span::longestSpan()
 {
-	int longest;
 	if (_currLength < 1)
 		throw listEmptyException();
 	if (_currLength == 1)
 		throw oneMemberListException();
 	Span tmp = *this;
 	sort(tmp._list.begin(), tmp._list.end());
-	longest = *(tmp._list.end()) - *(tmp._list.begin());
+	int min_val = tmp._list.front();
+	int max_val = tmp._list.back();
+	int longest = max_val - min_val;
 	return longest;
 
 }

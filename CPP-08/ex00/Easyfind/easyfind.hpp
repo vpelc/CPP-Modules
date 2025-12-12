@@ -13,7 +13,7 @@ class numberNotFoundException : public std::exception {
 template <typename T>
 int easyfind(T container, int n)
 {
-	T<int>::iterator it;
+	typename T::iterator it;
 	it = find(container.begin(), container.end(), n);
 	if (it == container.end() && *it != n)
 		throw numberNotFoundException();
