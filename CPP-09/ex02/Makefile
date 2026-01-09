@@ -6,7 +6,7 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/10 17:59:30 by vpelc             #+#    #+#              #
-#    Updated: 2025/10/01 17:14:24 by vpelc            ###   ########.fr        #
+#    Updated: 2026/01/08 13:51:09 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,19 +40,19 @@ $(OBJDIR)/%.o: %.cpp
 #	@echo "\033[1;32mFile $@ created.\033[0m";
 
 $(NAME): $(OBJ) 
-	@echo -e "\033[1;36mCompiling...\033[0m"
+	@echo "\033[1;36mCompiling...\033[0m"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo -e "\033[1;32mDone.\n\033[0m"
+	@echo "\033[1;32mDone.\n\033[0m"
 
 clean:
-	@echo -e "\033[1;35mRemoving obj/...\033[0m"
+	@echo "\033[1;35mRemoving obj/...\033[0m"
 	@$(RM) -r $(OBJDIR)
-	@echo -e "\033[1;32mAll Done for clean.\n\033[0m"
+	@echo "\033[1;32mAll Done for clean.\n\033[0m"
 
 fclean: clean
-	@echo -e "\033[1;35mRemoving exec...\033[0m"
+	@echo "\033[1;35mRemoving exec...\033[0m"
 	@$(RM) $(NAME)
-	@echo -e "\033[1;32mDone.\n\033[0m"
+	@echo "\033[1;32mDone.\n\033[0m"
 
 re: fclean obj all
 

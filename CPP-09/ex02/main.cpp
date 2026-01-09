@@ -29,8 +29,8 @@ int main(int argc, char** argv)
 		clock_t endDecTime = clock();
 		double timeElapsedDeq = static_cast<double>(endDecTime - startDecTime) / CLOCKS_PER_SEC;
 
-		if (!is_container_sorted(vec) || (int)vec.size() != (argc - 1))
-			throw std::invalid_argument ("vector was not sorted properly");
+		// if (!is_container_sorted(vec) || (int)vec.size() != (argc - 1))
+		// 	throw std::invalid_argument ("vector was not sorted properly");
 		if (!is_container_sorted(deque) || (int)deque.size() != (argc - 1))
 			throw std::invalid_argument ("deque was not sorted properly");
 

@@ -104,11 +104,15 @@ template <typename T> void PmergeMe::insert_jacobsthal_block(std::vector<typenam
 
 	typename std::vector<Iterator>::iterator pend_it =
 		next(pend.begin(), jacobsthalRange - 1);
+	int boundPos = std:: min(currentJacobsthal + _nbr_inserted_nbrs, 
+	                        static_cast<int>(main.size()));
 	typename std::vector<Iterator>::iterator bound_it =
-		next(main.begin(), currentJacobsthal + _nbr_inserted_nbrs);
+		next(main.begin(), boundPos);
 
 	while (loopCount > 0)
 	{
+		if (bound_it == main.end() && !main.empty())
+			bound_it--;
 		typename std::vector<Iterator>::iterator insert_pos =
 			std::upper_bound(main.begin(), bound_it, *pend_it, comp<Iterator>);
 		typename std::vector<Iterator>::iterator insertedAt = main.insert(insert_pos, *pend_it);
