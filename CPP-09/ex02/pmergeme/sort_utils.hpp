@@ -105,7 +105,7 @@ template <typename T> void PmergeMe::insert_jacobsthal_block(std::vector<typenam
 	typename std::vector<Iterator>::iterator pend_it =
 		next(pend.begin(), jacobsthalRange - 1);
 	int boundPos = std:: min(currentJacobsthal + _nbr_inserted_nbrs, 
-	                        static_cast<int>(main.size()));
+		static_cast<int>(main.size()));
 	typename std::vector<Iterator>::iterator bound_it =
 		next(main.begin(), boundPos);
 
@@ -122,7 +122,9 @@ template <typename T> void PmergeMe::insert_jacobsthal_block(std::vector<typenam
 		std::advance(pend_it, -1);
 
 		boundaryOffset += (insertedAt - main.begin()) == currentJacobsthal + _nbr_inserted_nbrs;
-		bound_it = next(main.begin(), currentJacobsthal + _nbr_inserted_nbrs - boundaryOffset);
+		boundPos = std:: min(currentJacobsthal + _nbr_inserted_nbrs - boundaryOffset, 
+			static_cast<int>(main.size()));
+		bound_it = next(main.begin(), boundPos);
 	}
 }
 
