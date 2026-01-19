@@ -12,8 +12,16 @@ PmergeMe::~PmergeMe() {}
 PmergeMe& PmergeMe::operator=(const PmergeMe& pm) { (void)pm; return *this;}
 
 
-void PmergeMe::sort_vec(std::vector<int>& vec) { merge_insertion_sort<std::vector<int> >(vec, 1); }
+void PmergeMe::sort_vec(std::vector<int>& vec)
+{
+	if (!is_container_sorted(vec))
+		merge_insertion_sort<std::vector<int> >(vec, 1);
+}
 
-void PmergeMe::sort_deque(std::deque<int>& deque) { merge_insertion_sort<std::deque<int> >(deque, 1); }
+void PmergeMe::sort_deque(std::deque<int>& deque)
+{
+	if (!is_container_sorted(deque))
+		merge_insertion_sort<std::deque<int> >(deque, 1); 
+}
 
 inline long _jacobsthal_number(long n) { return round((pow(2, n + 1) + pow(-1, n)) / 3); }

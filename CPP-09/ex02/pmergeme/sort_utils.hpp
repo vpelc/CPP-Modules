@@ -114,7 +114,7 @@ template <typename T> void PmergeMe::insert_jacobsthal_block(std::vector<typenam
 		if (bound_it == main.end() && !main.empty())
 			bound_it--;
 		typename std::vector<Iterator>::iterator insert_pos =
-			std::upper_bound(main.begin(), bound_it, *pend_it, comp<Iterator>);
+			std::upper_bound(main.begin(), bound_it + 1, *pend_it, comp<Iterator>);
 		typename std::vector<Iterator>::iterator insertedAt = main.insert(insert_pos, *pend_it);
 
 		--loopCount;
